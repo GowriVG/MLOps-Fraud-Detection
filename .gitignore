@@ -1,0 +1,7 @@
+# Ignore large datasets and model artifacts
+creditcard.csv
+*.pkl
+*.joblib
+*.zip
+*.tar
+*.gz

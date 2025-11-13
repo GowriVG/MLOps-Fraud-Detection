@@ -1,0 +1,31 @@
+name: CI/CD Pipeline for MLOps Demo
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Tests
+      run: |
+        python train_model.py
+        echo "Model training successful."
+
+    - name: Deploy to Render
+      run: |
+        echo "Deployment triggered on Render platform."
