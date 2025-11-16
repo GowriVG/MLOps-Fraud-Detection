@@ -7,7 +7,11 @@ import time
 
 # Initialize FastAPI
 # Initialize FastAPIhgcjhcj
-app = FastAPI(title="Real-Time Fraud Detection API", version="2.0")
+# app = FastAPI(title="Real-Time Fraud Detection API", version="2.0")
+app = FastAPI(
+    title="Real-Time Fraud Detection API",
+    version="2.1"  
+)
 
 # Load model and scaler
 model = joblib.load("model.joblib")
@@ -49,6 +53,7 @@ class TransactionInput(BaseModel):
 @app.get("/")
 def root():
     return {"message": "Welcome to the 100ms Real-Time Fraud Detection API", "version": "2.0"}
+
 
 @app.post("/predict")
 def predict_fraud(data: TransactionInput):
