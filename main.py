@@ -52,7 +52,7 @@ class TransactionInput(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to the 100ms Real-Time Fraud Detection API", "version": "2.0"}
+    return {"message": "Welcome to the 100ms Real-Time Fraud Detection API", "version": "2.1"}
 
 
 @app.post("/predict")
